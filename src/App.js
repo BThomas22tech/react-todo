@@ -8,15 +8,21 @@ function App() {
       <h1>
         Todo List
       </h1>
-      <ul>
-        {todoList.map(function(item){
+      <List />
+    </div>
+  );
+}
+function List(){
+  return(
+    
+    <ul>
+        {todoList.map((item)=>{
           return<li key={item.id}>
             <span>{item.id} </span>
             {item.title}</li>
         })}
       </ul>
-    </div>
-  );
+  )
 }
 
 export default App;
