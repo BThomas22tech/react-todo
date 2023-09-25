@@ -8,8 +8,9 @@ function App() {
       <h1>
         Todo List
       </h1>
-      <TodoList />
       <AddTodoForm />
+      <hr />
+      <TodoList />
     </div>
   );
 }
