@@ -13,7 +13,7 @@ function App() {
         Todo List
       </h1>
       <AddTodoForm onAddTodo={setNewTodo} />
-      <p>New Item: {newTodo}</p>
+      <p>New Item: <strong>{newTodo}</strong></p>
       <hr />
       <TodoList todoList={todoList}/>
       
