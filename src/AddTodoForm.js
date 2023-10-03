@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function AddTodoForm(props) {
     const handleChange = (event_item) => {
         // console.log(event_item.target.value)
@@ -26,6 +27,15 @@ function AddTodoForm(props) {
                 onChange={handleChange}
             ></input>
             <button type="submit">Add</button>
+
+function AddTodoForm() {
+    return (
+        <form>
+            <label htmlFor="todoTitle" id="todoTitle">
+                Title
+            </label>
+            <input type="text" id="todoTitle"></input>
+            <button>Add</button>
         </form>
     );
 }

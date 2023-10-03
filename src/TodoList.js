@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
@@ -12,7 +13,7 @@ function TodoList(props) {
                 )
             })}
         </ul>
-    )
+    );
 }
 
-export default TodoList
+export default TodoList;
