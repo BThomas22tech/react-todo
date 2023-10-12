@@ -7,7 +7,7 @@ function TodoList(props) {
 
     return (
         <ul>
-            {props.todoList.map(function(item) {
+            {props.todoList.map((item)=> {
                 return(
                 <TodoListItem key={item.id} item={item}/>
                 )
