@@ -2,9 +2,9 @@ import React from "react";
 
 
 function AddTodoForm(props) {
-    const handleChange = (event_item) => {
-        // console.log(event_item.target.value)
-        props.onAddTodo(event_item.target.value);
+    const handleChange = (event) => {
+
+        props.onAddTodo(event.target.value);
     };
     const [todoTitle,setTodoTitle] = React.useState([])
 

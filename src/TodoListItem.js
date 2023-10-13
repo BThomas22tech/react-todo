@@ -1,8 +1,9 @@
 import React from "react"
 
 function TodoListItem(props) {
+    const {title} = props
     return(
-        <li>{props.item.title}</li>
+        <li>{title}</li>
     )
 }
 
