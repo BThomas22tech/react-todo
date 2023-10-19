@@ -2,10 +2,6 @@ import React from "react";
 
 
 function AddTodoForm(props) {
-    const handleChange = (event) => {
-
-        props.onAddTodo(event.target.value);
-    };
     const [todoTitle,setTodoTitle] = React.useState([])
 
     function handleTitleChange(event)  {
@@ -33,7 +29,6 @@ function AddTodoForm(props) {
                 name="title"
                 value ={todoTitle}
                 onChange = {handleTitleChange}
-                onSubmit={handleChange}
             ></input>
             <button type="submit">Add</button>
             </form>
