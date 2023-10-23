@@ -7,9 +7,9 @@ function TodoList(props) {
 
     return (
         <ul>
-            {props.todoList.map(function(item) {
+            {props.todoList.map(({id,title})=> {
                 return(
-                <TodoListItem key={item.id} item={item}/>
+                <TodoListItem key={id} title={title}/>
                 )
             })}
         </ul>
