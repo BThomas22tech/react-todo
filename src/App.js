@@ -19,13 +19,13 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
 
       <hr />
       <TodoList todoList={todoList} />
-    </div>
+    </>
   );
 }
 
