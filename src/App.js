@@ -4,7 +4,7 @@ import AddTodoForm from "./AddTodoForm";
 
 function useSemiPersistentState() {
   const [todoList, setTodoList] = React.useState(
-    JSON.parse(localStorage.getItem("savedTodoList")) || React
+    JSON.parse(localStorage.getItem('savedTodoList'))|| []
   );
   React.useEffect(() => {
     const todoListString = JSON.stringify(todoList);
