@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
 
-function TodoListItem({title}) {
-    return(
-        <li>{title}</li>
-    )
+function TodoListItem({ title, handleremoveTodo}) {
+  return (
+    <li>
+      {title}
+      <button type="button" onClick= {handleremoveTodo}> remove</button>
+    </li>
+  );
 }
 
-export default TodoListItem
+export default TodoListItem;
