@@ -26,7 +26,8 @@ function AddTodoForm(props) {
             type = "text"
             todoTitle = {todoTitle}
             handleTitleChange={handleTitleChange}
-            />
+            autoFocus
+            >Title: </InputWithLabel>
             <button type="submit">Add</button>
             </form>
 )}
