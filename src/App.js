@@ -16,7 +16,7 @@ function useSemiPersistentState() {
 function App() {
   const [todoList, setTodoList] = useSemiPersistentState();
 
-  function handleremoveTodo({id}){
+  function handleremoveTodo(id){
     const removeTodo = todoList.filter(
       (todo) => id !== todo.id,
       )
