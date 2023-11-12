@@ -9,7 +9,7 @@ function TodoList(props) {
           <TodoListItem
             key={id}
             title={title}
-            onRemoveTodo={()=>props.onRemoveTodo(id)}
+            onRemoveTodo={() => props.onRemoveTodo(id)}
           />
         );
       })}
