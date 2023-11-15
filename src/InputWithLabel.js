@@ -1,10 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, {useRef, useEffect} from "react";
 
 function InputWithLabel(props) {
     const inputRef = useRef();
     useEffect(() => {
         inputRef.current.focus();
-    }, []);
+    });
     return (
         <>
             <label label={props.title}>{props.children}</label>

@@ -3,7 +3,7 @@ import React from "react";
 function TodoListItem({ id, title, onRemoveTodo }) {
   return (
     <li>
-      {title} <span></span>
+      {title} {" "}
       <button type="button" onClick={()=>onRemoveTodo(id)}>
         remove
       </button>
