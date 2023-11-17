@@ -18,7 +18,6 @@ function App() {
     }).then((result)=>{setTodoList(result.data.todoList)})
   
   }, []);
- 
 
   React.useEffect(() => {
     const todoListString = JSON.stringify(todoList);
