@@ -2,18 +2,23 @@ import React from "react";
 import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 
-
 function App() {
+  const initialList = JSON.parse(localStorage.getItem("savedTodoList")) || []
+  console.log(initialList)
   const [todoList, setTodoList] = React.useState(
-    JSON.parse(localStorage.getItem("savedTodoList")) || []
+    []
   );
 
   React.useEffect(() => {
-     
+
+    new Promise((resolve,reject) => {
+      setTimeout(()=>{
+        resolve({data:{todoList:initialList}})
+      },2000)
+    }).then((result)=>{setTodoList(result.data.todoList)})
+  
   }, []);
-  function sideEffectHandler(resolve,reject){
-    new Promise.resolve()
-  }
+ 
 
   React.useEffect(() => {
     const todoListString = JSON.stringify(todoList);
