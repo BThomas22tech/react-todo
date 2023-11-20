@@ -6,6 +6,7 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   const [todoList, setTodoList] = React.useState([]);
+
   React.useEffect(() => {
     new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <>
+    <p>{isLoading ? "Loading...": "" }</p>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
 
