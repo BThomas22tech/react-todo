@@ -41,8 +41,8 @@ function App() {
 
   return (
     <>
-      <p>{isLoading ? "Loading..." : <h1>Todo List</h1>}</p>
-      <AddTodoForm onAddTodo={addTodo} />
+      <h1>Todo List</h1>
+      {isLoading ? "Loading..." : <AddTodoForm onAddTodo={addTodo} />}
 
       <hr />
       <TodoList todoList={todoList} onRemoveTodo={handleremoveTodo} />
