@@ -17,8 +17,8 @@ function App() {
         });
       }, 2000);
     }).then((result) => {
-      setIsLoading(false);
       setTodoList(result.data.todoList);
+      setIsLoading(false);
     });
   }, []);
 
@@ -41,8 +41,7 @@ function App() {
 
   return (
     <>
-    <p>{isLoading ? "Loading...": "" }</p>
-      <h1>Todo List</h1>
+      <p>{isLoading ? "Loading..." : <h1>Todo List</h1>}</p>
       <AddTodoForm onAddTodo={addTodo} />
 
       <hr />
