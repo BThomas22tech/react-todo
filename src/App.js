@@ -41,11 +41,13 @@ function App() {
 
   return (
     <>
-      <h1>Todo List</h1>
-      {isLoading ? "Loading..." : <AddTodoForm onAddTodo={addTodo} />}
+    <h1>Todo List</h1>
+      <AddTodoForm onAddTodo={addTodo} />
+      
 
       <hr />
-      <TodoList todoList={todoList} onRemoveTodo={handleremoveTodo} />
+      {isLoading ? "Loading..." :
+      <TodoList todoList={todoList} onRemoveTodo={handleremoveTodo} />}
     </>
   );
 }
