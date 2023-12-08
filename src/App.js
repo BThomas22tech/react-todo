@@ -64,7 +64,6 @@ function App() {
       return airtableData;
     } catch (error) {
       console.error("something is wrong", error.message);
-      return null;
     }
   };
 
