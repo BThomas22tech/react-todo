@@ -7,7 +7,7 @@ function App() {
 
   const [todoList, setTodoList] = React.useState([]);
 
-  async function fetchData() {
+  const fetchData = async () => {
     const options = {
       method: "GET",
       headers: {
@@ -36,13 +36,47 @@ function App() {
     } catch (error) {
       console.error("Something went wrong", error.message);
     }
-  }
+  };
+  // const postData = async (todo) => {
+  //   const postUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/`
+  //   const options = {
+  //     method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+  //       },
+  //       body: JSON.stringify({
+  //         fields: {
+  //           title: todo,
+  //         },
+  //       })
+  //     }
+  //   try {
+  //     const response = await fetch(postUrl, options);
+      
+  //     if (!response.ok) {
+  //       const message = `Error has ocurred:${response.status}`;
+  //       throw new Error(message);
+  //     }
+  //     const airtableData = await response.json()
+  //     return airtableData
+  //     // console.log("data posted",airtableData)
+  //     // setTodoList(todos);
+  //     // setIsLoading(false);
+  //   } catch (error){
+  //     console.error("something is wrong", error.message)
+  //     return null
+  //   }
+    
+
+  // };
 
   React.useEffect(() => {
     fetchData();
   });
 
   React.useEffect(() => {
+    // postData();
     if (isLoading === false) {
       const todoListString = JSON.stringify(todoList);
       localStorage.setItem("savedTodoList", todoListString);
@@ -72,6 +106,6 @@ function App() {
       )}
     </>
   );
-}
+      }
 
 export default App;
