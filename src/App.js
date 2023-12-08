@@ -15,7 +15,7 @@ function App() {
       },
     };
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/`;
-    
+
     try {
       const response = await fetch(url, options);
       if (!response.ok) {
@@ -24,23 +24,22 @@ function App() {
       }
       const data = await response.json();
       console.log(data);
-      const todos = data.records.map((todo)=>{
+      const todos = data.records.map((todo) => {
         const newTodo = {
-          id:todo.id,
-          title: todo.fields.title
-        }
-        return newTodo
-      })
-      setTodoList(todos)
+          id: todo.id,
+          title: todo.fields.title,
+        };
+        return newTodo;
+      });
+      setTodoList(todos);
       setIsLoading(false);
-
     } catch (error) {
-      console.error("Something went wrong",error.message);
+      console.error("Something went wrong", error.message);
     }
   }
 
   React.useEffect(() => {
-    fetchData()
+    fetchData();
   });
 
   React.useEffect(() => {
