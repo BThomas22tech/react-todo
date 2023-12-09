@@ -93,19 +93,36 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Routes>
-        <Route path="/"></Route>
-      </Routes>
-      </BrowserRouter>
-          <h1>Todo List</h1>
-          <AddTodoForm onAddTodo={addTodo} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <h1>Todo List</h1>
+                <AddTodoForm onAddTodo={addTodo} />
 
-          <hr />
-          {isLoading ? (
-            "Loading..."
-          ) : (
-            <TodoList todoList={todoList} onRemoveTodo={handleremoveTodo} />
-          )}
+                <hr />
+                {isLoading ? (
+                  "Loading..."
+                ) : (
+                  <TodoList
+                    todoList={todoList}
+                    onRemoveTodo={handleremoveTodo}
+                  />
+                )}
+              </>
+            }
+          ></Route>
+          <Route
+            path="/new"
+            element={
+              <>
+                <h1>New Todo List</h1>
+              </>
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
