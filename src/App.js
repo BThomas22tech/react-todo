@@ -23,7 +23,6 @@ function App() {
         throw new Error(message);
       }
       const data = await response.json();
-      console.log(data);
       const todos = data.records.map((todo) => {
         const newTodo = {
           id: todo.id,
@@ -53,7 +52,6 @@ function App() {
     };
     try {
       const response = await fetch(postUrl, options);
-      console.log(response, "response");
 
       if (!response.ok) {
         const message = `Error has ocurred:${response.status}`;
@@ -72,7 +70,7 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    if (isLoading === false) {
+    if (!isLoading) {
       const todoListString = JSON.stringify(todoList);
       localStorage.setItem("savedTodoList", todoListString);
     }
