@@ -60,29 +60,44 @@ function App() {
         const message = `Error has ocurred:${response.status}`;
         throw new Error(message);
       }
-      const airtableData = await response.json(); const sortAscending = (objectA,objectB) =>{
+      const airtableData = await response.json();
+      const sortAscending = (objectA, objectB) => {
         const titleA = objectA.fields.title.toUpperCase();
         const titleB = objectB.fields.title.toUpperCase();
-  
-        if (titleA < titleB){
-          return -1
-        }
-        if (titleA === titleB){
-          return 0
-        }
-        if (titleA > titleB){
-          return 1
-        }
-  
-      }
-      airtableData.records.sort(sortAscending)
 
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA === titleB) {
+          return 0;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+      };
+      airtableData.records.sort(sortAscending);
+      const sortDescending = (objectA, objectB) => {
+        const titleA = objectA.fields.title;
+        const titleB = objectB.fields.title;
+
+        if (titleA < titleB) {
+          return 1;
+        }
+        if (titleA === titleB) {
+          return 0;
+        }
+        if (titleA > titleB) {
+          return -1;
+        }
+      };
+      airtableData.records.sort(sortDescending);
+
+      
       return airtableData;
+      
     } catch (error) {
       console.error("something is wrong", error.message);
     }
-   
-    
   };
 
   React.useEffect(() => {
