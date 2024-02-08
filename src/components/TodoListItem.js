@@ -3,15 +3,16 @@ import style from "./TodoList.module.css";
 import PropTypes from "prop-types"
 
 
+TodoListItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  
+}
 function TodoListItem({ id, title, onRemoveTodo }) {
-  TodoListItem.propTypes = {
-    title: PropTypes.string.isRequired,
-    
-  }
   return (
     <li className={style.ListItem}>
       {title} {" "}
-      <button type="button" onClick={()=>onRemoveTodo(id)}>
+      <button  className={style.btn}
+type="button" onClick={()=>onRemoveTodo(id)}>
         remove
       </button>
     </li>
