@@ -5,6 +5,7 @@ InputWithLabel.propTypes = {
     id: PropTypes.string.isRequired,
     todoTitle: PropTypes.string.isRequired,
 };
+
 function InputWithLabel(props) {
     const inputRef = useRef();
     useEffect(() => {
