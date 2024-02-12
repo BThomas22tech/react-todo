@@ -1,5 +1,10 @@
 import React from "react";
 import InputWithLabel from "./InputWithLabel";
+import PropTypes from "prop-types";
+
+AddTodoForm.propTypes = {
+  onAddTodo: PropTypes.func.isRequired,
+};
 
 function AddTodoForm(props) {
   const [todoTitle, setTodoTitle] = React.useState("");

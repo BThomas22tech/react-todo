@@ -28,9 +28,6 @@ form button {
 }
 
 
-
-
-
 .ListItem {
     color: #ff0000;
     font-family: cursive;
@@ -43,7 +40,7 @@ body {
     background-color: aqua;
 }
 
-button {
+.btn {
     background-color: blueviolet;
     border-radius: 10%;
     color: antiquewhite;
