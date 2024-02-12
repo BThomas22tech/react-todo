@@ -32,6 +32,42 @@ function App() {
         };
         return newTodo;
       });
+
+
+      // const sortAscending = (objectA, objectB) => {
+      //   const titleA = objectA.title;
+      //   const titleB = objectB.title;
+        
+      //   if (titleA < titleB) {
+      //     return -1;
+      //   }
+      //   if (titleA > titleB) {
+      //     return 1;
+      //   }
+      //   if (titleA === titleB) {
+      //     return 0;
+      //   }
+      //   console.log(titleA,"asc")
+      // };
+      // todos.sort(sortAscending);
+
+      const sortDescending = (objectA, objectB) => {
+        const titleA = objectA.title;
+        const titleB = objectB.title;
+        
+        if (titleA < titleB) {
+          return 1;
+        }
+        if (titleA > titleB) {
+          return -1;
+        }
+        if (titleA === titleB) {
+          return 0;
+        }
+        console.log(titleA,"desc")
+      };
+      todos.sort(sortDescending);
+
       setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
@@ -61,44 +97,28 @@ function App() {
         throw new Error(message);
       }
       const airtableData = await response.json();
-      const sortAscending = (objectA, objectB) => {
-        const titleA = objectA.fields.title.toUpperCase();
-        const titleB = objectB.fields.title.toUpperCase();
 
-        if (titleA < titleB) {
-          return -1;
-        }
-        if (titleA === titleB) {
-          return 0;
-        }
-        if (titleA > titleB) {
-          return 1;
-        }
-      };
-      airtableData.records.sort(sortAscending);
-      const sortDescending = (objectA, objectB) => {
-        const titleA = objectA.fields.title;
-        const titleB = objectB.fields.title;
-
-        if (titleA < titleB) {
-          return 1;
-        }
-        if (titleA === titleB) {
-          return 0;
-        }
-        if (titleA > titleB) {
-          return -1;
-        }
-      };
-      airtableData.records.sort(sortDescending);
-
-      
       return airtableData;
-      
     } catch (error) {
       console.error("something is wrong", error.message);
     }
   };
+
+  // const sortAscending = (objectA, objectB) => {
+  //   const titleA = objectA.fields.title.toUpperCase();
+  //   const titleB = objectB.fields.title.toUpperCase();
+
+  //   if (titleA < titleB) {
+  //     return -1;
+  //   }
+  //   if (titleA === titleB) {
+  //     return 0;
+  //   }
+  //   if (titleA > titleB) {
+  //     return 1;
+  //   }
+  // };
+  // airtableData.records.sort(sortAscending);
 
   React.useEffect(() => {
     fetchData();
