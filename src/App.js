@@ -96,6 +96,23 @@ function App() {
   }, [isLoading, todoList]);
 
   function handleremoveTodo(id) {
+    const deleteURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}`;
+    fetch(deleteURL, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete record from Airtable");
+        }
+        console.log("Record deleted successfully from Airtable");
+      })
+      .catch((error) => {
+        console.error("Error deleting record from Airtable:", error);
+      });
     const removeTodo = todoList.filter((todo) => id !== todo.id);
 
     setTodoList(removeTodo);
