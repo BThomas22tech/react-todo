@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 function TodoList(props) {
   TodoList.propTypes = {
     title: PropTypes.string.isRequired,
-    // key: PropTypes.string.isRequired,
   }
   return (
     <ul>
