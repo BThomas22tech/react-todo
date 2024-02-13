@@ -33,28 +33,10 @@ function App() {
         return newTodo;
       });
 
-
-      // const sortAscending = (objectA, objectB) => {
-      //   const titleA = objectA.title;
-      //   const titleB = objectB.title;
-        
-      //   if (titleA < titleB) {
-      //     return -1;
-      //   }
-      //   if (titleA > titleB) {
-      //     return 1;
-      //   }
-      //   if (titleA === titleB) {
-      //     return 0;
-      //   }
-      //   console.log(titleA,"asc")
-      // };
-      // todos.sort(sortAscending);
-
       const sortDescending = (objectA, objectB) => {
         const titleA = objectA.title;
         const titleB = objectB.title;
-        
+
         if (titleA < titleB) {
           return 1;
         }
@@ -64,7 +46,7 @@ function App() {
         if (titleA === titleB) {
           return 0;
         }
-        console.log(titleA,"desc")
+        console.log(titleA, "desc");
       };
       todos.sort(sortDescending);
 
@@ -103,22 +85,6 @@ function App() {
       console.error("something is wrong", error.message);
     }
   };
-
-  // const sortAscending = (objectA, objectB) => {
-  //   const titleA = objectA.fields.title.toUpperCase();
-  //   const titleB = objectB.fields.title.toUpperCase();
-
-  //   if (titleA < titleB) {
-  //     return -1;
-  //   }
-  //   if (titleA === titleB) {
-  //     return 0;
-  //   }
-  //   if (titleA > titleB) {
-  //     return 1;
-  //   }
-  // };
-  // airtableData.records.sort(sortAscending);
 
   React.useEffect(() => {
     fetchData();
