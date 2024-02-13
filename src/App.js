@@ -15,7 +15,7 @@ function App() {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
       },
     };
-    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/`;
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/?view=Grid%20view&sort[0][field]=title&sort[0][direction]=asc`;
 
     try {
       const response = await fetch(url, options);
@@ -31,6 +31,24 @@ function App() {
         };
         return newTodo;
       });
+
+      const sortDescending = (objectA, objectB) => {
+        const titleA = objectA.title;
+        const titleB = objectB.title;
+
+        if (titleA < titleB) {
+          return 1;
+        }
+        if (titleA > titleB) {
+          return -1;
+        }
+        if (titleA === titleB) {
+          return 0;
+        }
+        console.log(titleA, "desc");
+      };
+      todos.sort(sortDescending);
+
       setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
