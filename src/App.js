@@ -55,7 +55,7 @@ function App() {
       console.error("Something went wrong", error.message);
     }
   };
-  const postData = async (todo) => {
+  const postData = async (title) => {
     const postUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/`;
     const options = {
       method: "POST",
@@ -65,7 +65,7 @@ function App() {
       },
       body: JSON.stringify({
         fields: {
-          title: todo,
+          title: title,
         },
       }),
     };
@@ -95,7 +95,7 @@ function App() {
     }
   }, [isLoading, todoList]);
 
-  function handleremoveTodo(id) {
+  function handleRemoveTodo(id) {
     const deleteURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}`;
     fetch(deleteURL, {
       method: "DELETE",
@@ -131,7 +131,7 @@ function App() {
             path="/"
             element={
               <>
-                <h1>Todo List</h1>
+                <h1>{process.env.REACT_APP_TABLE_NAME}</h1>
                 <AddTodoForm onAddTodo={addTodo} />
 
                 <hr />
@@ -140,7 +140,7 @@ function App() {
                 ) : (
                   <TodoList
                     todoList={todoList}
-                    onRemoveTodo={handleremoveTodo}
+                    onRemoveTodo={handleRemoveTodo}
                   />
                 )}
               </>
