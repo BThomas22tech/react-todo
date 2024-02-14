@@ -6,20 +6,20 @@ InputWithLabel.propTypes = {
     todoTitle: PropTypes.string.isRequired,
 };
 
-function InputWithLabel(props) {
+function InputWithLabel({title,children,todoTitle,handleTitleChange}) {
     const inputRef = useRef();
     useEffect(() => {
         inputRef.current.focus();
     });
     return (
         <>
-            <label label={props.title}>{props.children}</label>
+            <label label={title}>{children}</label>
             <input
                 type="text"
                 id="todoTitle"
                 name="title"
-                value={props.todoTitle}
-                onChange={props.handleTitleChange}
+                value={todoTitle}
+                onChange={handleTitleChange}
                 ref={inputRef}
             ></input>
         </>

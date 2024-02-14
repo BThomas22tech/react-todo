@@ -6,7 +6,7 @@ AddTodoForm.propTypes = {
   onAddTodo: PropTypes.func.isRequired,
 };
 
-function AddTodoForm(onAddTodo) {
+function AddTodoForm({onAddTodo}) {
   const [todoTitle, setTodoTitle] = React.useState("");
 
   function handleTitleChange(event) {
