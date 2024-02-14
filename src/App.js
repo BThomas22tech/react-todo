@@ -131,7 +131,7 @@ function App() {
             path="/"
             element={
               <>
-                <h1>Todo List</h1>
+                <h1>{process.env.REACT_APP_TABLE_NAME}</h1>
                 <AddTodoForm onAddTodo={addTodo} />
 
                 <hr />
