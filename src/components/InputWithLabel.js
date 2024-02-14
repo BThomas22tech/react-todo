@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 InputWithLabel.propTypes = {
     id: PropTypes.string.isRequired,
     todoTitle: PropTypes.string.isRequired,
+    handleTitleChange: PropTypes.func.isRequired,
 };
 
 function InputWithLabel({title,children,todoTitle,handleTitleChange}) {
