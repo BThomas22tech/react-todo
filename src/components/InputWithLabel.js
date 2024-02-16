@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from "react";
+import style from "./TodoList.module.css"
+
 import PropTypes from "prop-types";
 
 InputWithLabel.propTypes = {
@@ -14,7 +16,8 @@ function InputWithLabel({title,children,todoTitle,handleTitleChange}) {
     });
     return (
         <>
-            <label label={title}>{children}</label>
+            <label className={style.titleSpacing} label={title}>{children}
+            </label>
             <input
                 type="text"
                 id="todoTitle"

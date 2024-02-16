@@ -1,5 +1,6 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
+import style from "./TodoList.module.css"
 import PropTypes from "prop-types";
 
 TodoList.propTypes = {
@@ -9,7 +10,7 @@ TodoList.propTypes = {
 
 function TodoList({ todoList, onRemoveTodo }) {
   return (
-    <ul>
+    <ul className={style.ulStyle}>
       {todoList.map(({ title, id }) => {
         return (
           <TodoListItem

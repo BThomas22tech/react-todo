@@ -10,7 +10,7 @@ TodoListItem.propTypes = {
 function TodoListItem({title, onRemoveTodo }) {
   return (
     <li className={style.ListItem}>
-      {title}{" "}
+      {title}
       <button
         className={style.btn}
         type="button"

@@ -1,3 +1,9 @@
+.border{
+    border-style: groove;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
 form {
 
     max-width: 400px;
@@ -12,10 +18,6 @@ form input {
     border-radius: 4px;
 }
 
-form button {
-    margin-top: 1rem;
-}
-
 
 @media screen and (max-width: 600px) {
     form {
@@ -26,37 +28,58 @@ form button {
         margin-top: 0.5rem;
     }
 }
+.formFormat{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
 
+}
 
 .ListItem {
-    color: #ff0000;
-    font-family: cursive;
-    font-size: medium;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    /* text-align:center; */
+    list-style: none;
 }
 
 body {
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(104, 190, 190);
 }
 
 .btn {
     background-color: blueviolet;
     border-radius: 10%;
     color: antiquewhite;
+    margin: 5px;
 }
 
 form button {
-    background-color: red;
-    margin-left: 1rem;
+    background-color: blueviolet;
+    /* margin-left: 1rem; */
 }
 
 form input {
-    border: 1px solid red;
+    border: 1px solid bisque;
 }
 
 h1 {
     text-align: center;
     font-weight: lighter;
     font-family: "Times New Roman", Times, serif;
+}
+
+.hcenter{
+    text-align: center;
+    
+    color: black;
+
+}
+.titleSpacing{
+    margin-right: 5px;
+    padding: 5px;
 }

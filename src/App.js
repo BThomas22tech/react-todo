@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoList";
 import AddTodoForm from "./components/AddTodoForm";
+import style from "./components/TodoList.module.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -130,8 +131,8 @@ function App() {
           <Route
             path="/"
             element={
-              <>
-                <h1>{process.env.REACT_APP_TABLE_NAME}</h1>
+              <div className={style.border}>
+                <h1 className={style.hcenter}>{process.env.REACT_APP_TABLE_NAME}</h1>
                 <AddTodoForm onAddTodo={addTodo} />
 
                 <hr />
@@ -143,7 +144,7 @@ function App() {
                     onRemoveTodo={handleRemoveTodo}
                   />
                 )}
-              </>
+              </div>
             }
           ></Route>
           <Route
