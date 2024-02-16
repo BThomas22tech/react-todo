@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BThomas22tech/react-todo/static/css/main.5f57bbee.css",
+    "main.js": "/BThomas22tech/react-todo/static/js/main.e1cbcc73.js",
+    "index.html": "/BThomas22tech/react-todo/index.html",
+    "main.5f57bbee.css.map": "/BThomas22tech/react-todo/static/css/main.5f57bbee.css.map",
+    "main.e1cbcc73.js.map": "/BThomas22tech/react-todo/static/js/main.e1cbcc73.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f57bbee.css",
+    "static/js/main.e1cbcc73.js"
+  ]
+}
